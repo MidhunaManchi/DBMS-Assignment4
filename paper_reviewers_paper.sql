@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `paper_reviewers` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `paper_reviewers`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: paper_reviewers
@@ -18,7 +20,6 @@
 --
 -- Table structure for table `paper`
 --
-USE PAPER_REVIEWERS;
 
 DROP TABLE IF EXISTS `paper`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21 10:41:55
+-- Dump completed on 2020-04-21 12:37:31
