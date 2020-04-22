@@ -41,6 +41,7 @@ Step 5: *mysql -u \<username\> -p < paper_reviewer_review.sql*
 
 Step 6: *mysql -u \<username\> -p < paper_reviewer_topic.sql*
                                                            
-**Please Note:**\<username\> : Please enter mysql username. 
-                After everystep, mysql would prompt for password. Please enter the same.
+**Please Note:**
+1. \<username\> : Please enter mysql username. 
+2. After everystep, mysql would prompt for password. Please enter the same.
 
