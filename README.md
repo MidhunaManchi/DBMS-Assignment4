@@ -29,7 +29,7 @@ The SQL files present in the repository consists of the following statements:
 
 **Pre-requistes:**  In the command line, please go to the path where MYSQL Server/bin is installed and execute the following steps:
 
-Step 1: *mysql -u <username> -p < paper_reviewer_author.sql*
+Step 1: *mysql -u \<username\> -p < paper_reviewer_author.sql*
 
 Step 2: *mysql -u <username> -p < paper_reviewer_paper.sql*
 
@@ -40,3 +40,7 @@ Step 4: *mysql -u <username> -p < paper_reviewer_assign.sql*
 Step 5: *mysql -u <username> -p < paper_reviewer_review.sql*
 
 Step 6: *mysql -u <username> -p < paper_reviewer_topic.sql*
+                                                           
+**Please Note:**<username> : Please enter mysql username. 
+                After everystep, mysql would prompt for password. Please enter the same.
+
