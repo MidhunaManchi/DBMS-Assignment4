@@ -1,7 +1,7 @@
 # DBMS-Assignment4
 ## From ER Design to Implementation - Paper Review Database
 
-###**Project Description:**
+### **Project Description:**
 
 The main goal of this project is to create database schema for Paper Reviews database.
 Used SQL queries for creating and populating the schema.
@@ -11,7 +11,7 @@ The SQL files present in the repository consists of the following statements:
 1. Create statements for creating schema and tables,  
 2. Insert statements for populating tables.
 
-###**Scripts Description:**
+### **Scripts Description:**
 
 **paper_reviewer_author.sql:** This SQL script contains DDL statements for creating schema 'paper_reviewer' and table 'Author'. It also contains the DML Insert statements for populating this table.
 
@@ -25,7 +25,7 @@ The SQL files present in the repository consists of the following statements:
 
 **paper_reviewer_topic.sql:** This SQL script contains DDL statements for creating schema 'paper_reviewer' if not exists and table 'Topic'. It also contains the DML Insert statements for populating this table.
 
-###**Execution instructions:**
+### **Execution instructions:**
 
 **Pre-requistes:**  In the command line, please go to the path where MYSQL Server/bin is installed and execute the following steps:
 
