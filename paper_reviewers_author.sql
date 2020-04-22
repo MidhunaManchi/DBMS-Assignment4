@@ -25,11 +25,10 @@ DROP TABLE IF EXISTS `author`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `author` (
-  `AuthorId` int(11) NOT NULL,
   `EmailAddr` varchar(25) NOT NULL,
   `FirstName` varchar(15) NOT NULL,
   `LastName` varchar(15) NOT NULL,
-  PRIMARY KEY (`AuthorId`)
+  PRIMARY KEY (`EmailAddr`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -39,7 +38,7 @@ CREATE TABLE `author` (
 
 LOCK TABLES `author` WRITE;
 /*!40000 ALTER TABLE `author` DISABLE KEYS */;
-INSERT INTO `author` VALUES (123,'abc@gmail.com','John','Smith'),(124,'midhu@gmail.com','Midhu','Manchi'),(125,'syam@gmail.com','Syam','Warrier'),(126,'kittu@gmail.com','Kittu','Manchi'),(127,'sai@gmail.com','Sai','Manchi'),(128,'ram@gmail.com','ram','Warrier');
+INSERT INTO `author` VALUES ('abc@gmail.com','John','Smith'),('kittu@gmail.com','Kittu','Manchi'),('midhu@gmail.com','Midhu','Manchi'),('ram@gmail.com','ram','Warrier'),('sai@gmail.com','Sai','Manchi'),('syam@gmail.com','Syam','Warrier');
 /*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21 12:37:31
+-- Dump completed on 2020-04-21 21:20:18

@@ -26,6 +26,7 @@ DROP TABLE IF EXISTS `review`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `review` (
   `ReviewId` int(11) NOT NULL,
+  `EmailAddr` varchar(25) NOT NULL,
   `ReviewerId` int(11) NOT NULL,
   `PaperId` int(11) NOT NULL,
   `Recommendation` varchar(25) NOT NULL,
@@ -33,11 +34,13 @@ CREATE TABLE `review` (
   `ReadabilityScore` int(11) NOT NULL,
   `OriginalityScore` int(11) NOT NULL,
   `RelevanceScore` int(11) NOT NULL,
-  PRIMARY KEY (`ReviewId`,`ReviewerId`),
+  PRIMARY KEY (`ReviewId`,`EmailAddr`),
   KEY `ReviewerId` (`ReviewerId`),
+  KEY `EmailAddr` (`EmailAddr`),
   KEY `PaperId` (`PaperId`),
   CONSTRAINT `review_ibfk_1` FOREIGN KEY (`ReviewerId`) REFERENCES `reviewer` (`ReviewerId`) ON DELETE CASCADE,
-  CONSTRAINT `review_ibfk_2` FOREIGN KEY (`PaperId`) REFERENCES `paper` (`PaperId`) ON DELETE CASCADE
+  CONSTRAINT `review_ibfk_2` FOREIGN KEY (`EmailAddr`) REFERENCES `reviewer` (`EmailAddr`) ON DELETE CASCADE,
+  CONSTRAINT `review_ibfk_3` FOREIGN KEY (`PaperId`) REFERENCES `paper` (`PaperId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -47,7 +50,7 @@ CREATE TABLE `review` (
 
 LOCK TABLES `review` WRITE;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
-INSERT INTO `review` VALUES (161,141,131,'GOOD',1,1,1,2),(162,142,132,'OKAY',1,1,1,2),(163,143,133,'VERY GOOD',1,1,1,2),(164,144,134,'Highly recommended',1,1,1,2),(165,145,135,'Effective Analysis',1,1,1,2),(166,146,136,'Good',1,1,1,2);
+INSERT INTO `review` VALUES (161,'abcd@yahoo.com',141,131,'GOOD',1,1,1,2),(162,'swati@yahoo.com',142,132,'OKAY',1,1,1,2),(163,'praneeth@gmail.com',143,133,'VERY GOOD',1,1,1,2),(164,'rekha@gmail.com',144,134,'Highly recommended',1,1,1,2),(165,'sagar@gmail.com',145,135,'Effective Analysis',1,1,1,2),(166,'efgh@gmail.com',146,136,'Good',1,1,1,2);
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21 12:37:31
+-- Dump completed on 2020-04-21 21:20:18

@@ -26,12 +26,12 @@ DROP TABLE IF EXISTS `assign`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `assign` (
   `AssignId` int(11) NOT NULL,
-  `ReviewerId` int(11) NOT NULL,
+  `EmailAddr` varchar(25) NOT NULL,
   `PaperId` int(11) NOT NULL,
   PRIMARY KEY (`AssignId`),
-  KEY `ReviewerId` (`ReviewerId`),
+  KEY `EmailAddr` (`EmailAddr`),
   KEY `PaperId` (`PaperId`),
-  CONSTRAINT `assign_ibfk_1` FOREIGN KEY (`ReviewerId`) REFERENCES `reviewer` (`ReviewerId`) ON DELETE CASCADE,
+  CONSTRAINT `assign_ibfk_1` FOREIGN KEY (`EmailAddr`) REFERENCES `reviewer` (`EmailAddr`) ON DELETE CASCADE,
   CONSTRAINT `assign_ibfk_2` FOREIGN KEY (`PaperId`) REFERENCES `paper` (`PaperId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -42,7 +42,7 @@ CREATE TABLE `assign` (
 
 LOCK TABLES `assign` WRITE;
 /*!40000 ALTER TABLE `assign` DISABLE KEYS */;
-INSERT INTO `assign` VALUES (151,131,141),(152,132,142),(153,133,143),(154,134,144),(155,135,145),(156,136,146);
+INSERT INTO `assign` VALUES (151,'abcd@yahoo.com',131),(152,'swati@yahoo.com',132),(153,'praneeth@gmail.com',133),(154,'rekha@gmail.com',134),(155,'sagar@gmail.com',135),(156,'efgh@gmail.com',136);
 /*!40000 ALTER TABLE `assign` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21 12:37:32
+-- Dump completed on 2020-04-21 21:20:19

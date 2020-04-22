@@ -26,13 +26,13 @@ DROP TABLE IF EXISTS `paper`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `paper` (
   `PaperId` int(11) NOT NULL,
-  `AuthorId` int(11) NOT NULL,
+  `EmailAddr` varchar(25) NOT NULL,
   `Title` varchar(40) NOT NULL,
   `Abstract` varchar(200) NOT NULL,
   `FileName` varchar(100) NOT NULL,
-  PRIMARY KEY (`PaperId`,`AuthorId`),
-  KEY `AuthorId` (`AuthorId`),
-  CONSTRAINT `paper_ibfk_1` FOREIGN KEY (`AuthorId`) REFERENCES `author` (`AuthorId`) ON DELETE CASCADE
+  PRIMARY KEY (`PaperId`,`EmailAddr`),
+  KEY `EmailAddr` (`EmailAddr`),
+  CONSTRAINT `paper_ibfk_1` FOREIGN KEY (`EmailAddr`) REFERENCES `author` (`EmailAddr`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,7 +42,7 @@ CREATE TABLE `paper` (
 
 LOCK TABLES `paper` WRITE;
 /*!40000 ALTER TABLE `paper` DISABLE KEYS */;
-INSERT INTO `paper` VALUES (131,123,'Lease Accounting','Accounting','Lease Accounting White Paper.doc'),(132,124,'Miltary','Miltary Personnel','Miltary White paper.doc'),(133,125,'Transforming new age of software testing','Software testing transformation','Transformation white paper.doc'),(134,126,'Software Architecture','Architecture','Architecture White Paper.doc'),(135,127,'Army Profession','Army','Army White Paper.doc'),(136,128,'Ethics','Ethics of Army','Ethics White Paper.doc');
+INSERT INTO `paper` VALUES (131,'abc@gmail.com','Lease Accounting','Accounting','Lease Accounting White Paper.doc'),(132,'midhu@gmail.com','Miltary','Miltary Personnel','Miltary White paper.doc'),(133,'syam@gmail.com','Transforming new age of software testing','Software testing transformation','Transformation white paper.doc'),(134,'kittu@gmail.com','Software Architecture','Architecture','Architecture White Paper.doc'),(135,'sai@gmail.com','Army Profession','Army','Army White Paper.doc'),(136,'ram@gmail.com','Ethics','Ethics of Army','Ethics White Paper.doc');
 /*!40000 ALTER TABLE `paper` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21 12:37:31
+-- Dump completed on 2020-04-21 21:20:18

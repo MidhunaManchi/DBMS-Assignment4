@@ -26,11 +26,11 @@ DROP TABLE IF EXISTS `topic`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `topic` (
   `TopicId` int(11) NOT NULL,
-  `ReviewerId` int(11) NOT NULL,
+  `EmailAddr` varchar(25) NOT NULL,
   `TopicName` varchar(25) NOT NULL,
   PRIMARY KEY (`TopicId`),
-  KEY `ReviewerId` (`ReviewerId`),
-  CONSTRAINT `topic_ibfk_1` FOREIGN KEY (`ReviewerId`) REFERENCES `reviewer` (`ReviewerId`) ON DELETE CASCADE
+  KEY `EmailAddr` (`EmailAddr`),
+  CONSTRAINT `topic_ibfk_1` FOREIGN KEY (`EmailAddr`) REFERENCES `reviewer` (`EmailAddr`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,7 +40,7 @@ CREATE TABLE `topic` (
 
 LOCK TABLES `topic` WRITE;
 /*!40000 ALTER TABLE `topic` DISABLE KEYS */;
-INSERT INTO `topic` VALUES (171,141,'Lease Accounting'),(172,142,'Military'),(173,143,'Transforming new age'),(174,144,'Software Architecture'),(175,145,'Army Profession'),(176,146,'Ethics');
+INSERT INTO `topic` VALUES (171,'abcd@yahoo.com','Lease Accounting'),(172,'swati@yahoo.com','Military'),(173,'praneeth@gmail.com','Transforming new age'),(174,'rekha@gmail.com','Software Architecture'),(175,'sagar@gmail.com','Army Profession'),(176,'efgh@gmail.com','Ethics');
 /*!40000 ALTER TABLE `topic` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21 12:37:30
+-- Dump completed on 2020-04-21 21:20:17
